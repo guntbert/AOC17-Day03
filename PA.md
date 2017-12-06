@@ -10,3 +10,8 @@
   - n=3: 7/6-5-4-3-4-5-6
   - n=4: 9/8-7-6-5-4-5-6-7-8
 - jede Stufe hat index 1..PAnzahl(n)
+- PosNr(n,i)=1+sum(8*m,m=1..n-1)+i
+- mögl. Algo für Umkehrung (n,i aus PosNr)
+  - ziehe 1 ab
+  - ziehe so lange PAnzahl(n) ab, bis Rest&lt;nächster Abzugswert -> n speichern
+  - Rest ist i
