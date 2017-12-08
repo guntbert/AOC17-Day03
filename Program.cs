@@ -8,11 +8,11 @@ namespace Day03 {
         }
         static void Main (string[] args) {
             int i = 1;
-            Console.WriteLine ($"{i}: {GetCoordinates(i)}");
+            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index}:");
             i = 5;
-            Console.WriteLine ($"{i}: {GetCoordinates(i)}");
+            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index}:");
             i = 10;
-            Console.WriteLine ($"{i}: {GetCoordinates(i)}");
+            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index}:");
         }
 
         /// <summary>
