@@ -8,11 +8,11 @@ namespace Day03 {
         }
         static void Main (string[] args) {
             int i = 1;
-            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index}:");
+            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
             i = 5;
-            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index}:");
+            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
             i = 10;
-            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index}:");
+            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
         }
 
         /// <summary>
@@ -46,6 +46,21 @@ namespace Day03 {
                 return 1;
             } else {
                 return 8 * tier;
+            }
+        }
+
+        private static int manhattanDistanceFromCenter(Coordinates position)
+        {
+            if(position.tier==0)
+            return 0;
+            else
+            {
+int n = position.tier;
+int i = position.index;
+                int reduzIndex=i%(2*n);
+                int indexCenterOfLine=n-1;
+                int distanceToCenterOfLine=Math.Abs(reduzIndex-indexCenterOfLine);
+                return n+distanceToCenterOfLine;
             }
         }
     }
