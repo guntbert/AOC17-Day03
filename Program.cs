@@ -25,12 +25,11 @@ namespace Day03 {
             Coordinates coordinates = new Coordinates ();
             int newRemainder = sequenceNumber - 1;
             int oldRemainder;
-            int tier = 1;
+            int tier = 0;
             do {
+                ++tier;
                 oldRemainder = newRemainder;
                 newRemainder -= PositionCount (tier);
-                ++tier;
-
             } while (newRemainder > 0);
             coordinates.tier = tier;
             coordinates.index = oldRemainder;
