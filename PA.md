@@ -13,5 +13,7 @@
 - PosNr(n,i)=1+sum(8*m,m=1..n-1)+i
 - mögl. Algo für Umkehrung (n,i aus PosNr)
   - ziehe 1 ab
-  - ziehe so lange PAnzahl(n) ab, bis Rest&lt;nächster Abzugswert -> n speichern
+  - alternativen
+    - ziehe so lange PAnzahl(n) ab, bis Rest &lt; nächster Abzugswert -> n speichern
+    - ziehe so lange PAnzahl(n) bis Rest &lt; 0, dazu immer den vorherigen Wert auch speichern
   - Rest ist i
