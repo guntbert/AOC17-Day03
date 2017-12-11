@@ -9,13 +9,16 @@ namespace Day03 {
         static void Main (string[] args) {
             int i = 1;
             System.Console.WriteLine("1: expect:0-1-0");
-            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
+            Coordinates currentCoords=GetCoordinates(i);
+            Console.WriteLine ($"{i}: {currentCoords.tier}-{currentCoords.index} - {manhattanDistanceFromCenter(currentCoords)}");
             i = 5;
             System.Console.WriteLine("5: expect:1-4-2");
-            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
+            currentCoords=GetCoordinates(i);
+            Console.WriteLine ($"{i}: {currentCoords.tier}-{currentCoords.index} - {manhattanDistanceFromCenter(currentCoords)}");
             i = 10;
             System.Console.WriteLine("10: expect:2-1-3");
-            Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
+            currentCoords=GetCoordinates(i);
+            Console.WriteLine ($"{i}: {currentCoords.tier}-{currentCoords.index} - {manhattanDistanceFromCenter(currentCoords)}");
         }
 
         /// <summary>
@@ -26,9 +29,15 @@ namespace Day03 {
         /// <returns></returns>
         static Coordinates GetCoordinates (int sequenceNumber) {
             Coordinates coordinates = new Coordinates ();
-            int newRemainder = sequenceNumber - 2;
+            if  (sequenceNumber==1)
+            {
+                coordinates.tier=0;
+                coordinates.index=1;
+                return coordinates;
+            } 
+            int newRemainder = sequenceNumber - 1;
             int oldRemainder;
-            int tier = -1;
+            int tier = 0;
             do {
                 ++tier;
                 oldRemainder = newRemainder;
@@ -61,7 +70,7 @@ namespace Day03 {
                 int n = position.tier;
                 int i = position.index;
                 int reduzIndex=i%(2*n);
-                int indexCenterOfLine=n-1;
+                int indexCenterOfLine=n;
                 int distanceToCenterOfLine=Math.Abs(reduzIndex-indexCenterOfLine);
                 return n+distanceToCenterOfLine;
             }
