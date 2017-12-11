@@ -8,10 +8,13 @@ namespace Day03 {
         }
         static void Main (string[] args) {
             int i = 1;
+            System.Console.WriteLine("1: expect:0-1-0");
             Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
             i = 5;
+            System.Console.WriteLine("5: expect:1-4-2");
             Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
             i = 10;
+            System.Console.WriteLine("10: expect:2-1-3");
             Console.WriteLine ($"{i}: {GetCoordinates(i).tier}-{GetCoordinates(i).index} - {manhattanDistanceFromCenter(GetCoordinates(i))}");
         }
 
@@ -25,7 +28,7 @@ namespace Day03 {
             Coordinates coordinates = new Coordinates ();
             int newRemainder = sequenceNumber - 2;
             int oldRemainder;
-            int tier = 0;
+            int tier = -1;
             do {
                 ++tier;
                 oldRemainder = newRemainder;
@@ -52,19 +55,11 @@ namespace Day03 {
         private static int manhattanDistanceFromCenter(Coordinates position)
         {
             if(position.tier==0)
-<<<<<<< HEAD
                 return 0;
             else
             {
                 int n = position.tier;
                 int i = position.index;
-=======
-            return 0;
-            else
-            {
-int n = position.tier;
-int i = position.index;
->>>>>>> c6e1453b9260ac464d590d8fdac302fa50f6db44
                 int reduzIndex=i%(2*n);
                 int indexCenterOfLine=n-1;
                 int distanceToCenterOfLine=Math.Abs(reduzIndex-indexCenterOfLine);
