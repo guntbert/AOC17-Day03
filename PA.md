@@ -45,7 +45,7 @@ Your puzzle input is 361527.
     - ziehe so lange PAnzahl(n) bis Rest < 0, dazu immer den vorherigen Wert auch speichern
   - Rest ist i
 - distance
-  - setze voraus: tier>1
+  - setze voraus: tier>0
   - verwende n=tier
   - n <= distance  <= 2n-1
   - Seitenmitte: distance=n
