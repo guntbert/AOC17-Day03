@@ -52,11 +52,19 @@ namespace Day03 {
         private static int manhattanDistanceFromCenter(Coordinates position)
         {
             if(position.tier==0)
+<<<<<<< HEAD
                 return 0;
             else
             {
                 int n = position.tier;
                 int i = position.index;
+=======
+            return 0;
+            else
+            {
+int n = position.tier;
+int i = position.index;
+>>>>>>> c6e1453b9260ac464d590d8fdac302fa50f6db44
                 int reduzIndex=i%(2*n);
                 int indexCenterOfLine=n-1;
                 int distanceToCenterOfLine=Math.Abs(reduzIndex-indexCenterOfLine);
