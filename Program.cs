@@ -19,6 +19,9 @@ namespace Day03 {
             System.Console.WriteLine("10: expect:2-1-3");
             currentCoords=GetCoordinates(i);
             Console.WriteLine ($"{i}: {currentCoords.tier}-{currentCoords.index} - {manhattanDistanceFromCenter(currentCoords)}");
+            i = 361527;
+            currentCoords=GetCoordinates(i);
+            Console.WriteLine ($"{i}: {currentCoords.tier}-{currentCoords.index} - {manhattanDistanceFromCenter(currentCoords)}");
         }
 
         /// <summary>
